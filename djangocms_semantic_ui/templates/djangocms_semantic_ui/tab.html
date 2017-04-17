@@ -1,0 +1,6 @@
+{% load cms_tags %}
+<div class="ui {{ instance.get_classes }} tab segment" data-tab="{{ instance.data_tab }}">
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+</div>

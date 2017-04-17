@@ -1,0 +1,22 @@
+{% load cms_tags %}
+<div class="ui {{ instance.get_classes }} menu">
+    {% for plugin in instance.child_plugin_instances %}
+    <a class="item {% if forloop.first %}active{% endif %}" data-tab="{{ plugin.data_tab }}">{{ plugin.label }}</a>
+    {% endfor %}
+</div>
+<div id="tabs">
+    {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+    {% endfor %}
+</div>
+
+{% load sekizai_tags %}
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+$('.menu .item')
+    .tab()
+;
+$( "#tabs .tab:first-child" ).addClass( "active" );
+</script>
+{% endaddtoblock %}
