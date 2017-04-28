@@ -4,9 +4,14 @@ from setuptools import find_packages, setup
 from djangocms_semantic_ui import __version__
 
 try:
-    long_description = open('README.md').read()
+    long_description = open('README.rst').read()
 except:
     long_description = "SemanticUI Plugins for DjangoCMS."
+
+try:
+    license = open('LICENSE.txt').read()
+except:
+    license = "MIT License"
 
 
 REQUIREMENTS = [
@@ -14,7 +19,7 @@ REQUIREMENTS = [
 ]
 
 CLASSIFIERS = [
-    'Development Status :: 5 - Production/Development',
+    'Development Status :: 4 - Beta',
     'Environment :: Web Environment',
     'Framework :: Django',
     'Intended Audience :: Developers',
@@ -40,7 +45,7 @@ setup(
     packages=find_packages(),
     package_data={'': ['README.md']},
     install_requires=REQUIREMENTS,
-    license='LICENSE.txt',
+    license=license,
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
     long_description=long_description,
