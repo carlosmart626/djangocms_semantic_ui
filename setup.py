@@ -3,6 +3,11 @@
 from setuptools import find_packages, setup
 from djangocms_semantic_ui import __version__
 
+try:
+    long_description = open('README.md').read()
+except:
+    long_description = "SemanticUI Plugins for DjangoCMS."
+
 
 REQUIREMENTS = [
     'django-cms>=3.2.0',
@@ -38,7 +43,7 @@ setup(
     license='LICENSE.txt',
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
-    long_description=open('README.md').read(),
+    long_description=long_description,
     include_package_data=True,
     zip_safe=False,
     test_suite='tests.settings.run',
