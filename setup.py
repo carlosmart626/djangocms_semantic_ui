@@ -1,14 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from setuptools import setup
+from setuptools import find_packages, setup
 from djangocms_semantic_ui import __version__
 
 
-INSTALL_REQUIRES = [
+REQUIREMENTS = [
     'django-cms>=3.2.0',
-    'django>=1.8,<1.10',
-    'django-sekizai >= 0.4.2',
-    'django-appconf',
 ]
 
 CLASSIFIERS = [
@@ -31,19 +28,17 @@ CLASSIFIERS = [
 setup(
     name='djangocms-semantic-ui',
     version=__version__,
-    description='Column Plugin for django CMS',
+    description='Semantic UI components for django CMS',
     author='Carlos Martínez',
     author_email='carlosmart626@gmail.com',
     url='https://github.com/CarlosMart626/djangocms_semantic_ui',
-    packages=[
-        'djangocms_semantic_ui',
-        'djangocms_semantic_ui.migrations',
-    ],
-    install_requires=INSTALL_REQUIRES,
+    packages=find_packages(),
+    install_requires=REQUIREMENTS,
     license='LICENSE.txt',
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
     long_description=open('README.md').read(),
     include_package_data=True,
-    zip_safe=False
+    zip_safe=False,
+    test_suite='tests.settings.run',
 )

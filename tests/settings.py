@@ -1,15 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from django.contrib.auth.models import AbstractUser
-from django.db import models
-
-
-class CustomUser(AbstractUser):
-    sites = models.ManyToManyField('sites.Site')
-
-    def get_sites(self):
-        return self.sites
-
 
 HELPER_SETTINGS = {
     'INSTALLED_APPS': [],
@@ -21,6 +11,14 @@ HELPER_SETTINGS = {
         }]
     },
     'LANGUAGE_CODE': 'en',
+    'SECRET_KEY': 1,
+
+    'DATABASES': {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'django_test.sqlite',
+        }
+    }
 }
 
 
