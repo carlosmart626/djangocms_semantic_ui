@@ -33,6 +33,7 @@ setup(
     author_email='carlosmart626@gmail.com',
     url='https://github.com/CarlosMart626/djangocms_semantic_ui',
     packages=find_packages(),
+    package_data={'': ['README.md']},
     install_requires=REQUIREMENTS,
     license='LICENSE.txt',
     platforms=['OS Independent'],
