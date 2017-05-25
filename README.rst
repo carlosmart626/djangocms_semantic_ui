@@ -24,7 +24,7 @@ Available Components
 Usage
 =====
 
-Install using ``pip install djangocms-semantic-ui`` and add into installed apps inside your djangocms
+Install using ``pip install djangocms_semantic_ui`` and add into installed apps inside your djangocms
 project
 
 Settings
