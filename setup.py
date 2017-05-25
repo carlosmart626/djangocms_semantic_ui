@@ -52,4 +52,5 @@ setup(
     include_package_data=True,
     zip_safe=False,
     test_suite='tests.settings.run',
+    keywords='django djangocms semantic-ui',
 )
