@@ -75,6 +75,12 @@ GRID_ALIGN = (
     ('right aligned', 'Right aligned'),
 )
 
+GRID_RESPONSIVE = (
+    ('stackable', 'Stackable'),
+    ('doubling', 'Doubling'),
+    ('stackable doubling', 'Stackable and Doubling'),
+)
+
 COLUMN_ALIGN = (
     ('left floated', 'Left floated'),
     ('center aligned', 'Center aligned'),
@@ -123,7 +129,6 @@ class Segment(CMSPlugin):
         max_length=20,
         help_text=_('Whats the type of segment'),
     )
-
     # Add an app namespace to related_name to avoid field name clashes
     # with any other plugins that have a field with the same name as the
     # lowercase of the class name of this model.
@@ -282,6 +287,14 @@ class Grid(CMSPlugin):
         choices=GRID_ALIGN,
         blank=True,
         max_length=20,
+    )
+    responsive = models.CharField(
+        verbose_name=_('Responsive'),
+        choices=GRID_RESPONSIVE,
+        null=True,
+        blank=True,
+        max_length=20,
+        help_text=_('Grid responsive behavior'),
     )
 
     cmsplugin_ptr = models.OneToOneField(
