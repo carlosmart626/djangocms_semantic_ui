@@ -326,6 +326,8 @@ class Grid(CMSPlugin):
             classes.append(self.grid_type)
         if self.align:
             classes.append(self.align)
+        if self.responsive:
+            classes.append(self.responsive)
         return ' '.join(classes)
 
 
