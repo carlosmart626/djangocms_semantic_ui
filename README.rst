@@ -5,10 +5,12 @@ DjangoCMS Semantic UI
 .. image:: https://badge.fury.io/py/djangocms-semantic-ui.svg
     :target: https://badge.fury.io/py/djangocms-semantic-ui
 
-.. image:: https://travis-ci.org/CarlosMart626/djangocms_semantic_ui.svg?branch=master
-    :target: https://travis-ci.org/CarlosMart626/djangocms_semantic_ui
+.. image:: https://github.com/CarlosMart626/djangocms_semantic_ui/actions/workflows/test.yml/badge.svg
+    :target: https://github.com/CarlosMart626/djangocms_semantic_ui/actions/workflows/test.yml
 
 Semantic UI reusable components for DjangoCMS.
+
+Requires Python 3.10+, Django 5.2 and django-cms 5.1.
 
 Available Components
 ====================
@@ -24,8 +26,13 @@ Available Components
 Usage
 =====
 
-Install using ``pip install djangocms_semantic_ui`` and add into installed apps inside your djangocms
-project
+Install using ``pip install djangocms-semantic-ui`` and add it to the installed apps of your
+django CMS project.
+
+.. note::
+
+    django-cms 5.1 imports the ``packaging`` library at runtime without declaring it as a
+    dependency, so install ``packaging`` alongside it.
 
 Settings
 ========
@@ -34,5 +41,5 @@ Settings
 
     INSTALLED_APPS = (
         # ...
-        'djangocms-semantic-ui',
+        'djangocms_semantic_ui',
     )

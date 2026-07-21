@@ -90,3 +90,6 @@ ENV/
 
 # test project artifacts
 tests/django_test.sqlite
+dist/
+build/
+*.egg-info/
