@@ -1,7 +1,5 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
 from django.db import migrations, models
+import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
@@ -18,7 +16,7 @@ class Migration(migrations.Migration):
                 ('label', models.CharField(verbose_name='Label', max_length=255, blank=True, help_text='Overrides the display name in the structure mode.')),
                 ('data_tab', models.CharField(verbose_name='Datatab', max_length=255, help_text='Data_tab')),
                 ('tab_type', models.CharField(verbose_name='Tab Type', max_length=20, blank=True, choices=[('bottom attached', 'Bottom attached')])),
-                ('cmsplugin_ptr', models.OneToOneField(primary_key=True, serialize=False, related_name='djangocms_semantic_ui_tab', parent_link=True, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(primary_key=True, serialize=False, on_delete=django.db.models.deletion.CASCADE, related_name='djangocms_semantic_ui_tab', parent_link=True, to='cms.CMSPlugin')),
             ],
             options={
                 'abstract': False,
@@ -30,7 +28,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('label', models.CharField(verbose_name='Label', max_length=255, blank=True, help_text='Overrides the display name in the structure mode.')),
                 ('tab_container_type', models.CharField(verbose_name='Tab Container Type', max_length=20, blank=True, choices=[('pointing secondary', 'Pointing secondary'), ('top attached tabular', 'Top attached tabular')])),
-                ('cmsplugin_ptr', models.OneToOneField(primary_key=True, serialize=False, related_name='djangocms_semantic_ui_tabcontainer', parent_link=True, to='cms.CMSPlugin')),
+                ('cmsplugin_ptr', models.OneToOneField(primary_key=True, serialize=False, on_delete=django.db.models.deletion.CASCADE, related_name='djangocms_semantic_ui_tabcontainer', parent_link=True, to='cms.CMSPlugin')),
             ],
             options={
                 'abstract': False,

@@ -1,7 +1,6 @@
 from django.db import models
 from cms.models import CMSPlugin
-from django.utils.encoding import python_2_unicode_compatible
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 SEMANTIC_UI_COLORS = (
@@ -97,7 +96,6 @@ TAB_TYPE = (
 )
 
 
-@python_2_unicode_compatible
 class Segment(CMSPlugin):
     """
     Segment
@@ -135,8 +133,10 @@ class Segment(CMSPlugin):
     # https://github.com/divio/django-cms/issues/5030
     cmsplugin_ptr = models.OneToOneField(
         CMSPlugin,
+        on_delete=models.CASCADE,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        primary_key=True,
     )
 
     def __str__(self):
@@ -165,7 +165,6 @@ class Segment(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
 class GroupSegment(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -182,12 +181,14 @@ class GroupSegment(CMSPlugin):
 
     cmsplugin_ptr = models.OneToOneField(
         CMSPlugin,
+        on_delete=models.CASCADE,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        primary_key=True,
     )
 
     def __str__(self):
-        return u"%s" % self.get_type_group_display()
+        return "%s" % self.get_type_group_display()
 
     def get_short_description(self):
         # display format:
@@ -200,7 +201,6 @@ class GroupSegment(CMSPlugin):
         return ' '.join(display)
 
 
-@python_2_unicode_compatible
 class Container(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -232,12 +232,14 @@ class Container(CMSPlugin):
 
     cmsplugin_ptr = models.OneToOneField(
         CMSPlugin,
+        on_delete=models.CASCADE,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        primary_key=True,
     )
 
     def __str__(self):
-        return u"%s" % self.get_type_container_display()
+        return "%s" % self.get_type_container_display()
 
     def get_short_description(self):
         # display format:
@@ -262,7 +264,6 @@ class Container(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
 class Grid(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -299,12 +300,14 @@ class Grid(CMSPlugin):
 
     cmsplugin_ptr = models.OneToOneField(
         CMSPlugin,
+        on_delete=models.CASCADE,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        primary_key=True,
     )
 
     def __str__(self):
-        return u"%s" % self.label
+        return "%s" % self.label
 
     def get_short_description(self):
         # display format:
@@ -331,7 +334,6 @@ class Grid(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
 class Column(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -354,12 +356,14 @@ class Column(CMSPlugin):
 
     cmsplugin_ptr = models.OneToOneField(
         CMSPlugin,
+        on_delete=models.CASCADE,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        primary_key=True,
     )
 
     def __str__(self):
-        return u"%s" % self.label
+        return "%s" % self.label
 
     def get_short_description(self):
         # display format:
@@ -382,7 +386,6 @@ class Column(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
 class TabContainer(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -400,12 +403,14 @@ class TabContainer(CMSPlugin):
 
     cmsplugin_ptr = models.OneToOneField(
         CMSPlugin,
+        on_delete=models.CASCADE,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        primary_key=True,
     )
 
     def __str__(self):
-        return u"%s" % self.label
+        return "%s" % self.label
 
     def get_short_description(self):
         # display format:
@@ -424,7 +429,6 @@ class TabContainer(CMSPlugin):
         return ' '.join(classes)
 
 
-@python_2_unicode_compatible
 class Tab(CMSPlugin):
     label = models.CharField(
         verbose_name=_('Label'),
@@ -447,12 +451,14 @@ class Tab(CMSPlugin):
 
     cmsplugin_ptr = models.OneToOneField(
         CMSPlugin,
+        on_delete=models.CASCADE,
         related_name='%(app_label)s_%(class)s',
         parent_link=True,
+        primary_key=True,
     )
 
     def __str__(self):
-        return u"%s" % self.label
+        return "%s" % self.label
 
     def get_short_description(self):
         # display format:
