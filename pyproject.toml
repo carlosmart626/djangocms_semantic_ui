@@ -32,6 +32,9 @@ classifiers = [
     "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
 ]
 dependencies = [
+    # Capped at the Django series actually classified and exercised in CI.
+    # Raise the cap once 6.0 is added to the test matrix.
+    "Django>=5.2,<6.0",
     "django-cms>=5.1",
     # django-cms 5.1 imports `packaging` at runtime (cms/utils/compat/__init__.py
     # does `from packaging.version import Version`) but does not declare it in its
