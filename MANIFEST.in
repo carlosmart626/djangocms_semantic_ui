@@ -1,3 +1,14 @@
 include LICENSE.txt
 include README.rst
+include setup.cfg
 recursive-include djangocms_semantic_ui/templates *
+
+# Ship everything needed to actually run the test suite from an unpacked
+# sdist: the test package, its Django settings/urls/runner, its requirements
+# file and its test-project templates.
+recursive-include tests *.py
+recursive-include tests/templates *
+include tests/requirements.txt
+
+global-exclude *.py[co]
+global-exclude __pycache__/*
