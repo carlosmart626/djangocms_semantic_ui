@@ -6,7 +6,11 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cms', '0043_alter_globalpagepermission_can_view_and_more'),
+        # Depend on the cms app in general rather than a specific migration
+        # number: this migration only needs cms.CMSPlugin to exist, which it
+        # does from the first cms migration onwards, and pinning an exact
+        # number would break if django-cms renumbers in a future release.
+        ('cms', '__first__'),
         ('djangocms_semantic_ui', '0003_auto_20170916_1913'),
     ]
 
