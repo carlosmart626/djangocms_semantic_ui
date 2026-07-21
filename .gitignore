@@ -93,3 +93,4 @@ tests/django_test.sqlite
 dist/
 build/
 *.egg-info/
+.venv/
