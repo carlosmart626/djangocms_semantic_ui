@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
             field=models.CharField(choices=[('stackable', 'Stackable'), ('doubling', 'Doubling'), ('stackable doubling', 'Stackable and Doubling')], max_length=20, blank=True, help_text='Grid responsive behavior', null=True, verbose_name='Responsive'),
         ),
         migrations.AlterField(
-            model_name='ta',
+            model_name='tab',
             name='tab_type',
             field=models.CharField(default='bottom attached', max_length=20, verbose_name='Tab Type', blank=True, choices=[('bottom attached', 'Bottom attached')]),
         ),

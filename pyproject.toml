@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "djangocms-semantic-ui"
+dynamic = ["version"]
+description = "Semantic UI components for django CMS"
+readme = { file = "README.rst", content-type = "text/x-rst" }
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE.txt"]
+authors = [
+    { name = "Carlos Martínez", email = "carlosmart626@gmail.com" },
+]
+keywords = ["django", "djangocms", "django-cms", "semantic-ui"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+dependencies = [
+    "django-cms>=5.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/CarlosMart626/djangocms_semantic_ui"
+Source = "https://github.com/CarlosMart626/djangocms_semantic_ui"
+Issues = "https://github.com/CarlosMart626/djangocms_semantic_ui/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "djangocms_semantic_ui.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["djangocms_semantic_ui*"]
+
+[tool.setuptools.package-data]
+djangocms_semantic_ui = ["templates/**/*"]
+
+[tool.flake8]
+max-line-length = 120
+exclude = ["*/docs/*", "*/migrations/*"]
