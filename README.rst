@@ -32,7 +32,8 @@ django CMS project.
 .. note::
 
     django-cms 5.1 imports the ``packaging`` library at runtime without declaring it as a
-    dependency, so install ``packaging`` alongside it.
+    dependency of its own, so this package declares ``packaging`` explicitly and pip will
+    pull it in for you.
 
 Settings
 ========

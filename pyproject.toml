@@ -33,6 +33,11 @@ classifiers = [
 ]
 dependencies = [
     "django-cms>=5.1",
+    # django-cms 5.1 imports `packaging` at runtime (cms/utils/compat/__init__.py
+    # does `from packaging.version import Version`) but does not declare it in its
+    # own dependencies, so a bare install raises ModuleNotFoundError. Declare it
+    # explicitly here rather than relying on it arriving transitively.
+    "packaging>=23",
 ]
 
 [project.urls]
